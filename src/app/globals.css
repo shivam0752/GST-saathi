@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F9F8F3;
+  --surface: #FAFAF7;
+  --card: #FFFFFF;
+  --border: #E2E0D8;
+  --primary: #16A34A;
+  --primary-light: #F0FDF4;
+  --primary-border: #BBF7D0;
+  --warning-bg: #FFF7ED;
+  --warning-text: #EA580C;
+  --warning-border: #FED7AA;
+  --error-bg: #FEF2F2;
+  --error-text: #DC2626;
+  --text-primary: #1A1A18;
+  --text-secondary: #6B6A66;
+  --text-muted: #9B9A96;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-pill: 20px;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-border: var(--primary-border);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-text: var(--warning-text);
+  --color-warning-border: var(--warning-border);
+  --color-error-bg: var(--error-bg);
+  --color-error-text: var(--error-text);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-pill: var(--radius-pill);
+  
+  --font-sans: "Noto Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-sans;
+  }
+}
+
+/* Loading animation for splash screen */
+@keyframes loading-dot {
+  0%, 100% { background-color: #E2E0D8; }
+  33% { background-color: #16A34A; }
+}
+
+.animate-dot-1 {
+  animation: loading-dot 1.2s infinite;
+}
+.animate-dot-2 {
+  animation: loading-dot 1.2s infinite 0.4s;
+}
+.animate-dot-3 {
+  animation: loading-dot 1.2s infinite 0.8s;
+}
+
+/* Mobile frame container */
+.app-container {
+  max-width: 390px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #F9F8F3;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 391px) {
+  body {
+    background-color: #F0F0F0;
+  }
+}
