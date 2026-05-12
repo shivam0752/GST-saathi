@@ -7,12 +7,12 @@ import { useLanguage } from '@/context/LanguageContext';
 import { strings } from '@/lib/strings';
 
 const categories = [
-  { id: 1, emoji: '🛒', hindi: 'Kirana / Grocery', marathi: 'किराणा / Grocery', telugu: 'కిరాణా / Grocery' },
-  { id: 2, emoji: '👔', hindi: 'Kapda / Textile', marathi: 'कापड / Textile', telugu: 'వస్త్రాలు / Textile' },
-  { id: 3, emoji: '📱', hindi: 'Electronics', marathi: 'Electronics', telugu: 'Electronics' },
-  { id: 4, emoji: '🔧', hindi: 'Hardware / Auzaar', marathi: 'हार्डवेअर / Auzaar', telugu: 'హార్డ్వేర్ / Auzaar' },
-  { id: 5, emoji: '🍽️', hindi: 'Khana / Food & Bev', marathi: 'खाणे / Food & Bev', telugu: 'ఆహారం / Food & Bev' },
-  { id: 6, emoji: '📦', hindi: 'Kuch aur / Other', marathi: 'इतर / Other', telugu: 'ఇతరత్రా / Other' },
+  { id: 1, emoji: '🛒', hindi: 'Kirana / Grocery', marathi: 'किరాణా / Grocery', telugu: 'కిరాణా / Grocery', english: 'Grocery / General Store' },
+  { id: 2, emoji: '👔', hindi: 'Kapda / Textile', marathi: 'कापड / Textile', telugu: 'వస్త్రాలు / Textile', english: 'Textile / Apparels' },
+  { id: 3, emoji: '📱', hindi: 'Electronics', marathi: 'Electronics', telugu: 'Electronics', english: 'Electronics' },
+  { id: 4, emoji: '🔧', hindi: 'Hardware / Auzaar', marathi: 'हार्डवेअर / Auzaar', telugu: 'హార్డ్వేర్ / Auzaar', english: 'Hardware / Tools' },
+  { id: 5, emoji: '🍽️', hindi: 'Khana / Food & Bev', marathi: 'खाणे / Food & Bev', telugu: 'ఆహారం / Food & Bev', english: 'Food & Beverage' },
+  { id: 6, emoji: '📦', hindi: 'Kuch aur / Other', marathi: 'इतर / Other', telugu: 'ఇతరత్రా / Other', english: 'Other / Services' },
 ];
 
 export default function CategorySelectionPage() {

@@ -28,7 +28,7 @@ export default function BillsPage() {
   }, [status]);
 
   const handleConfirm = () => {
-    localStorage.setItem('hasAddedBill', 'true');
+    sessionStorage.setItem('hasAddedBill', 'true');
     setToast('Bill save ho gaya! ✓');
     setTimeout(() => {
       setToast(null);

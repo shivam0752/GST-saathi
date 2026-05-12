@@ -6,7 +6,7 @@ import { Check } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { strings } from '@/lib/strings';
 
-type LanguageKey = 'hindi' | 'marathi' | 'telugu';
+type LanguageKey = 'hindi' | 'marathi' | 'telugu' | 'english';
 
 interface LanguageOption {
   key: LanguageKey | string;
@@ -16,12 +16,12 @@ interface LanguageOption {
 }
 
 const languages: LanguageOption[] = [
+  { key: 'english', native: 'English', english: 'English' },
   { key: 'hindi', native: 'हिंदी', english: 'Hindi' },
   { key: 'marathi', native: 'मराठी', english: 'Marathi' },
   { key: 'telugu', native: 'తెలుగు', english: 'Telugu' },
   { key: 'tamil', native: 'தமிழ்', english: 'Tamil', comingSoon: true },
   { key: 'kannada', native: 'ಕನ್ನಡ', english: 'Kannada', comingSoon: true },
-  { key: 'bengali', native: 'বাংলা', english: 'Bengali', comingSoon: true },
 ];
 
 export default function LanguageSelection() {
@@ -69,6 +69,9 @@ export default function LanguageSelection() {
         </h1>
         <p className="text-[13px] text-text-secondary mt-[6px]">
           Apni bhasha chunein
+        </p>
+        <p className="text-[11px] text-text-muted mt-[8px] text-center max-w-[260px] italic">
+          Note: This is a prototype. We currently support limited language options for testing.
         </p>
       </div>
 

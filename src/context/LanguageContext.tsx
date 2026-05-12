@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Language = 'hindi' | 'marathi' | 'telugu';
+type Language = 'hindi' | 'marathi' | 'telugu' | 'english';
 
 interface LanguageContextType {
   language: Language;
@@ -17,7 +17,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('gst_saathi_lang') as Language;
+    const savedLang = sessionStorage.getItem('gst_saathi_lang') as Language;
     if (savedLang && ['hindi', 'marathi', 'telugu'].includes(savedLang)) {
       setLanguageState(savedLang);
     }
@@ -26,7 +26,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('gst_saathi_lang', lang);
+    sessionStorage.setItem('gst_saathi_lang', lang);
   };
 
   return (

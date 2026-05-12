@@ -26,7 +26,7 @@ export default function VoiceOrderPage() {
   const startSimulation = () => {
     setState('listening');
     setShowChips(false);
-    
+
     const timer = setTimeout(() => {
       setState('finished');
       const chipsTimer = setTimeout(() => {
@@ -34,7 +34,7 @@ export default function VoiceOrderPage() {
       }, 500);
       return () => clearTimeout(chipsTimer);
     }, 2500);
-    
+
     return () => clearTimeout(timer);
   };
 
@@ -71,7 +71,7 @@ export default function VoiceOrderPage() {
           {s.speakOrder}
         </h2>
         <p className="text-[13px] text-white/60 mt-[6px] text-center">
-          Hindi mein bolein, hum samjhenge
+          Apni Bhasha Mein Bolein, Hum Samjhenge
         </p>
       </div>
 
@@ -94,7 +94,7 @@ export default function VoiceOrderPage() {
             transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
             className="absolute w-[96px] h-[96px] border-2 border-primary/50 rounded-full"
           />
-          
+
           <div className="relative w-[72px] h-[72px] bg-primary rounded-full flex items-center justify-center shadow-lg z-10">
             <Mic size={28} className="text-white" />
           </div>
@@ -146,7 +146,7 @@ export default function VoiceOrderPage() {
             <p className="text-[16px] font-medium text-text-primary leading-[1.5]">
               "{currentTranscript}"
             </p>
-            
+
             {!showChips && (
               <p className="text-[11px] text-text-muted mt-[4px]">
                 AI samajh raha hai...

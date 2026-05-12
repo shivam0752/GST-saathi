@@ -16,7 +16,7 @@ export default function InvoicePreviewPage() {
   const [toast, setToast] = useState<string | null>(null);
 
   const handleAction = (message: string) => {
-    localStorage.setItem('hasAddedInvoice', 'true');
+    sessionStorage.setItem('hasAddedInvoice', 'true');
     setToast(message);
     setTimeout(() => {
       setToast(null);

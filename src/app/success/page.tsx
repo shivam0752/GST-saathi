@@ -17,17 +17,16 @@ export default function SuccessPage() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          router.push('/dashboard');
-          return 0;
-        }
-        return prev - 1;
-      });
+      setCountdown((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
     return () => clearInterval(timer);
-  }, [router]);
+  }, []);
+
+  useEffect(() => {
+    if (countdown === 0) {
+      router.push('/dashboard');
+    }
+  }, [countdown, router]);
 
   // Confetti generation
   const confetti = useMemo(() => {
@@ -95,19 +94,19 @@ export default function SuccessPage() {
           </span>
 
           <div className="flex flex-col">
-            <ReceiptRow 
+            <ReceiptRow
               icon={<div className="w-[16px] h-[16px] bg-primary rounded-full flex items-center justify-center"><Check size={10} className="text-white" /></div>}
               label="GSTR-1 submit ho gayi"
               refId={dummyFiling.gstr1Ref}
               isGreen
             />
-            <ReceiptRow 
+            <ReceiptRow
               icon={<div className="w-[16px] h-[16px] bg-primary rounded-full flex items-center justify-center"><Check size={10} className="text-white" /></div>}
               label="GSTR-3B submit ho gayi"
               refId={dummyFiling.gstr3bRef}
               isGreen
             />
-            <ReceiptRow 
+            <ReceiptRow
               icon={<span className="text-[16px]">💰</span>}
               label={`${dummyFiling.finalPayable} pay ho gaya`}
               refId={dummyFiling.paidTime}
@@ -186,12 +185,6 @@ export default function SuccessPage() {
             className="w-full h-[52px] bg-primary rounded-[12px] text-white text-[15px] font-semibold active:scale-[0.98] transition-transform"
           >
             {s.homeScreen}
-          </button>
-          <button
-            onClick={() => router.push('/onboarding/voice')}
-            className="w-full h-[48px] bg-white border-1.5 border-border rounded-[12px] text-text-primary text-[14px] font-medium active:scale-[0.98] transition-transform"
-          >
-            {s.doAgain}
           </button>
         </div>
       </div>

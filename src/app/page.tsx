@@ -14,12 +14,9 @@ export default function SplashScreen() {
     if (isLoading) return;
 
     const timer = setTimeout(() => {
-      const savedLang = localStorage.getItem('gst_saathi_lang');
-      if (savedLang) {
-        router.push('/dashboard');
-      } else {
-        router.push('/language');
-      }
+      // Clear session to ensure full restart from basic
+      sessionStorage.clear();
+      router.push('/language');
     }, 2500);
 
     return () => clearTimeout(timer);
